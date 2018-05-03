@@ -8,12 +8,32 @@ from data_methods import twitter_data_methods as tm
 
 # streaming config
 tokens = {
-    'access_token': "982333914201993216-3lUuCAaUCYgkB4kpkRz1tzL24veeYeX",
-    'access_token_secret': "3XSDsJXSmUXwOwOlEflXYFTCXxIDOdhMQ4kNNzuTIRXkB",
-    'consumer_key': "bz58HpjCEXS0kgn21Rj3qcvNo",
-    'consumer_secret': "LjcezoypAs4Rjgmsd32bd8dB6tkGg7c6UvpIQ66hUi99EJYyPB"
+    'access_token': "991762847431577600-oEE9jJJGop7ryuxlFrV0hGh23mTeVsr",
+    'access_token_secret': "UVQF3XVLOTQ6ts9ExjLvSkqKoXKP2t8ymsNXib7pPk7t7",
+    'consumer_key': "hfVB97jMLkaxy3JZDyLNrq44R",
+    'consumer_secret': "WStsierspsfDXCLwzeXEnUyks6QDtPpS0Z8jxp7FMDXlDNz0dV"
 }
-track_path = path.join(root_path, 'resources/NASDQ100.txt')
+
+keywords_choice = 0
+try:
+    keywords_choice = int(sys.argv[1])
+except:
+    pass
+
+# crypto currency keywords
+
+if keywords_choice == 1:
+    track_path = path.join(root_path, 'resources/tech_keywords.txt')
+    database_path = path.join(root_path, 'resources/tech_tweets.db')
+    print("Starting collecting tech tweets")
+
+else:
+    track_path = path.join(root_path, 'resources/crypto_keywords.txt')
+    database_path = path.join(root_path, 'resources/crypto_tweets.db')
+    print("Starting collecting crypto tweets")
+
+
+
 with open(track_path, 'r') as f:
     stock_symbol = f.read()
     track = stock_symbol.split(",")
@@ -25,7 +45,7 @@ tweet_filter = tm.key_word_filter(track)
 tweet_formator = tm.twitter_format()
 
 # database config
-database_path = path.join(root_path, 'resources/twitter_database.db')
+
 tweet_database = tm.twitter_database(database_path)
 
 # start the pipeline
