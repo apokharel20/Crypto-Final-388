@@ -43,13 +43,14 @@ class twitter_database:
 
         if not batch_mode:
             self.conn.commit()
+            print("Commit 1 inserts")
             return
 
         self.insert_count += 1
         if self.insert_count % 10 == 0:
             self.conn.commit()
             self.insert_count = 0
-            print("Commit 10000 inserts...")
+            print("Commit 10 inserts...")
 
     # query is a SQL format string
     # return a what
