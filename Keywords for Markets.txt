@@ -18,7 +18,7 @@ Keywords for Markets:
 
 2. Technology
 	- Products
-		- Mobile phones: Razer, SGS8, Nintendo Switch, iPhone X, iPhone 8
+		- Mobile phones: Razer, SGS8, Nintendo Switch, iPhone X, iPhone 8, Tesla Mode [3, S, X]
 	- Tech-Politics
 		- Panama Papers
 		- Apple in Ireland
@@ -27,6 +27,10 @@ Keywords for Markets:
 		- Private Data
 		- Targeted Advertising
 		- Jeff Bezos (Richest)
+	- Misc
+		- Internet of Things
+		- Internet.org
+		- Virtual Reality
 
 
 
